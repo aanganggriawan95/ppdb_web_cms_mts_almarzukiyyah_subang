@@ -132,12 +132,12 @@
                     Simpan Data
                 </button>
 
-                <button
-                    type="reset"
+                <a href="/admin/tentang"
+                
                     class="px-5 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
                 >
                     Kembali
-                </button>
+                </a>
             </div>
 
         </form>

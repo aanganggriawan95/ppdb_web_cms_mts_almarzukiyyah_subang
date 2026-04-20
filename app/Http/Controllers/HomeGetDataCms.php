@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\berita;
 use App\Models\hero;
 use App\Models\tentang;
 use Illuminate\Http\Request;
@@ -33,11 +34,20 @@ class HomeGetDataCms extends Controller
         //     ];
         // });
          $tentang = tentang::first();
+         $berita = berita::latest()->get();
         
         return view('home', [
             'hero' => $hero,
-            'tentang' => $tentang
+            'tentang' => $tentang,
+            'berita' => $berita
         ]);
+    }
+
+    public function show(string $id)
+    {
+        $berita = berita::findOrFail($id);
+
+        return view('detail-berita', compact('berita'));
     }
 
 }

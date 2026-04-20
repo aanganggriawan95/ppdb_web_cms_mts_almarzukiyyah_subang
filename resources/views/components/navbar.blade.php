@@ -19,8 +19,8 @@
 
             <!-- Logo -->
             <a href="{{ url('/') }}" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-                    <img src="/assets/Logo1.png" class="rounded-full object-contain">
+                <div class="w-14 h-14 p-1 rounded-full bg-white flex items-center justify-center">
+                    <img src="/assets/logopst.png" class="rounded-full object-contain">
                 </div>
                 <div>
                     <span class="font-bold text-lg text-white">
@@ -60,16 +60,14 @@
                             Visi & Misi
                         </a>
 
-                        <a href="/ekstrakurikuler" class="block px-4 py-2 text-sm hover:bg-[#084E43]">
+                        <a href="/ekstra" class="block px-4 py-2 text-sm hover:bg-[#084E43]">
                             Ekstrakulikuler
                         </a>
 
-                        <a href="/" class="block px-4 py-2 text-sm hover:bg-[#084E43]">
+                        <a href="/guru-staf" class="block px-4 py-2 text-sm hover:bg-[#084E43]">
                             Guru & Staf
                         </a>
-                        <a href="/" class="block px-4 py-2 text-sm hover:bg-[#084E43]">
-                            Fasilitas
-                        </a>
+                        
                     </div>
                 </div>
 
@@ -93,7 +91,7 @@
                 </div>
 
                 <!-- PMB -->
-                <a href="/pmb"
+                <a href="/ppdb"
                    class="px-4 py-2 text-sm bg-green-600 text-white rounded-lg">
                     PMB Online
                 </a>

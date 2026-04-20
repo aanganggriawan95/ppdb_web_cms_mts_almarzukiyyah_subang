@@ -32,17 +32,21 @@
 
                 <a href="/admin/hero"
                    class="block px-3 py-2 rounded hover:bg-gray-700">
-                    Hero Section
+                    Hero Section CMS
                 </a>
 
                 <a href="/admin/visi-misi"
                    class="block px-3 py-2 rounded hover:bg-gray-700">
-                    Visi Misi
+                    Visi Misi CMS
                 </a>
 
-                <a href="/admin/cms/fasilitas"
+                <a href="/admin/tentang"
                    class="block px-3 py-2 rounded hover:bg-gray-700">
-                    Fasilitas
+                    Tentang CMS
+                </a>
+                <a href="/admin/berita"
+                   class="block px-3 py-2 rounded hover:bg-gray-700">
+                    Berita CMS
                 </a>
 
             </div>

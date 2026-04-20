@@ -20,6 +20,6 @@
     <main class="pt-20">
         {{ $slot }}
     </main>
-
+<x-footer-section />
 </body>
 </html>
