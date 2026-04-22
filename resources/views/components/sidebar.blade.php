@@ -48,6 +48,18 @@
                    class="block px-3 py-2 rounded hover:bg-gray-700">
                     Berita CMS
                 </a>
+                <a href="/admin/ekskul"
+                   class="block px-3 py-2 rounded hover:bg-gray-700">
+                    Ekskul CMS
+                </a>
+                <a href="/admin/guru-staf"
+                   class="block px-3 py-2 rounded hover:bg-gray-700">
+                    Guru & Staf CMS
+                </a>
+                <a href="/admin/fasilitas"
+                   class="block px-3 py-2 rounded hover:bg-gray-700">
+                    Fasilitas CMS
+                </a>
 
             </div>
         </div>

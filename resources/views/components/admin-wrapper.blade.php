@@ -20,7 +20,7 @@
 
         <x-topbar :title="$title" />
 
-        <main class="p-6 h-screen overflow-auto">
+        <main class="p-6 h-screen overflow-hidden">
             {{ $slot }}
         </main>
 

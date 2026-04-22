@@ -60,7 +60,7 @@
                             Visi & Misi
                         </a>
 
-                        <a href="/ekstra" class="block px-4 py-2 text-sm hover:bg-[#084E43]">
+                        <a href="/ekskul" class="block px-4 py-2 text-sm hover:bg-[#084E43]">
                             Ekstrakulikuler
                         </a>
 

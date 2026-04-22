@@ -36,145 +36,201 @@
           
 
         </div>
-<section id="form-pendaftaran" class="py-20 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-4">
+    <section id="form-pendaftaran" class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4">
 
-        <!-- CARD -->
-        <div class="bg-white shadow-xl rounded-2xl p-8">
+            <!-- CARD -->
+            <div class="bg-white shadow-xl rounded-2xl p-8">
 
-            <!-- TITLE -->
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold mb-2">
-                    Form Pendaftaran Online
-                </h2>
-                <p class="text-gray-500">
-                    MTS Almarzukiyyah
-                </p>
-            </div>
+                <!-- TITLE -->
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-2">
+                        Form Pendaftaran Online
+                    </h2>
+                    <p class="text-gray-500">
+                        MTS Almarzukiyyah
+                    </p>
+                </div>
 
-            <form action="#" method="POST">
+            <form action="/ppdb-post" method="POST">
                 @csrf
 
-                <!-- GRID FORM -->
+                <!-- NAMA -->
+                <div class="mb-4">
+                    <label class="block text-sm font-semibold mb-1">Nama Lengkap</label>
+                    <input type="text" name="nama"
+                        class="w-full border border-slate-400 rounded-lg px-4 py-2">
+                    @error('nama')
+                        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
+
                 <div class="grid md:grid-cols-2 gap-6">
 
-                    <!-- JUDUL -->
+                    <!-- JENIS KELAMIN -->
                     <div>
-                        <label class="block text-sm font-semibold mb-1">Judul</label>
-                        <input type="text" name="judul"
-                            class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none">
+                        <label class="block text-sm font-semibold mb-1">Jenis Kelamin</label>
+                        <select name="jenis_kelamin"
+                            class="w-full border border-slate-400 rounded-lg px-4 py-2">
+                            <option value="">Pilih</option>
+                            <option value="L">Laki-laki</option>
+                            <option value="P">Perempuan</option>
+                        </select>
+                        @error('jenis_kelamin')
+                        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                    @enderror
                     </div>
 
                     <!-- JENJANG -->
                     <div x-data="{ open:false, selected:'' }" class="relative">
                         <label class="block text-sm font-semibold mb-1">Jenjang</label>
 
-                        <!-- SELECT BOX -->
                         <div @click="open = !open"
-                            class="w-full border rounded-lg px-4 py-2 cursor-pointer flex justify-between items-center focus:ring-2 focus:ring-green-500">
+                            class="w-full border border-slate-400 rounded-lg px-4 py-2 cursor-pointer flex justify-between items-center">
 
                             <span x-text="selected || 'Pilih Jenjang'" class="text-gray-500"></span>
-                            <svg class="w-4 h-4 transition-transform"
-                                 :class="open ? 'rotate-180' : ''"
-                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M19 9l-7 7-7-7"/>
-                            </svg>
                         </div>
 
-                        <!-- DROPDOWN -->
-                        <div x-show="open"
-                             @click.outside="open=false"
-                             x-transition
-                             class="absolute w-full bg-white border rounded-lg mt-2 shadow-lg z-10">
+                        <div x-show="open" @click.outside="open=false"
+                            class="absolute w-full bg-white border rounded-lg mt-2 shadow-lg z-10">
 
                             @foreach(['MI','MTs','MA'] as $j)
                             <div @click="selected='{{ $j }}'; open=false"
-                                 class="px-4 py-2 hover:bg-green-100 cursor-pointer">
+                                class="px-4 py-2 hover:bg-green-100 cursor-pointer">
                                 {{ $j }}
                             </div>
                             @endforeach
                         </div>
 
                         <input type="hidden" name="jenjang" :value="selected">
-                    </div>
-
-                    <!-- NAMA -->
-                    <div>
-                        <label class="block text-sm font-semibold mb-1">Nama Lengkap</label>
-                        <input type="text" name="nama"
-                            class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500">
-                    </div>
-
-                    <!-- JENIS KELAMIN -->
-                    <div>
-                        <label class="block text-sm font-semibold mb-1">Jenis Kelamin</label>
-                        <select name="jenis_kelamin"
-                            class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 transition">
-                            <option value="">Pilih</option>
-                            <option value="L">Laki-laki</option>
-                            <option value="P">Perempuan</option>
-                        </select>
+                        @error('jenjang')
+                        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                    @enderror
                     </div>
 
                 </div>
 
-                <!-- FULL WIDTH -->
+                <!-- ALAMAT -->
                 <div class="mt-6">
-                    <label class="block text-sm font-semibold mb-1">Alamat</label>
-                    <textarea name="alamat" rows="3"
-                        class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500"></textarea>
+                    <label class="block text-sm font-semibold mb-1">Alamat Lengkap</label>
+                    <textarea name="alamat_lengkap" rows="3"
+                        class="w-full border border-slate-400 rounded-lg px-4 py-2"></textarea>
+                    @error('alamat_lengkap')
+                        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
-                <!-- GRID 2 -->
                 <div class="grid md:grid-cols-2 gap-6 mt-6">
 
+                    <!-- WA WALI -->
                     <div>
                         <label class="block text-sm font-semibold mb-1">Nomor WA Orang Tua</label>
-                        <input type="tel" name="wa_ortu"
-                            class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500">
+                        <input type="number" name="no_wa_wali"
+                            class="w-full border border-slate-400 rounded-lg px-4 py-2">
+                        @error('no_wa_wali')
+                        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
 
+                    <!-- ASAL SEKOLAH -->
                     <div>
                         <label class="block text-sm font-semibold mb-1">Asal Sekolah</label>
                         <input type="text" name="asal_sekolah"
-                            class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500">
+                            class="w-full border border-slate-400 rounded-lg px-4 py-2">
+                        @error('asal_sekolah')
+                        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                    @enderror
                     </div>
 
+                    <!-- WA WALI KELAS -->
                     <div>
                         <label class="block text-sm font-semibold mb-1">WA Wali Kelas</label>
-                        <input type="tel" name="wa_walikelas"
-                            class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500">
+                        <input type="number" name="wa_walikelas_asal_sekolah"
+                            class="w-full border border-slate-400 rounded-lg px-4 py-2">
+
+                        @error('wa_walikelas_asal_sekolah')
+                        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                    @enderror
                     </div>
 
+                    <!-- WA OPERATOR -->
                     <div>
                         <label class="block text-sm font-semibold mb-1">WA Operator</label>
-                        <input type="tel" name="wa_operator"
-                            class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500">
+                        <input type="number" name="wa_operator_asal_sekolah"
+                            class="w-full border border-slate-400 rounded-lg px-4 py-2">
+
+                        @error('wa_operator_asal_sekolah')
+                        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                    @enderror
                     </div>
 
                 </div>
 
-                <!-- FULL -->
+                <!-- ALAMAT SEKOLAH -->
                 <div class="mt-6">
-                    <label class="block text-sm font-semibold mb-1">Alamat Sekolah</label>
-                    <textarea name="alamat_sekolah" rows="3"
-                        class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500"></textarea>
+                    <label class="block text-sm font-semibold mb-1">Alamat Asal Sekolah</label>
+                    <textarea name="alamat_asal_sekolah" rows="3"
+                        class="w-full border border-slate-400 rounded-lg px-4 py-2"></textarea>
+                    
+                        @error('alamat_asal_sekolah')
+                        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <!-- BUTTON -->
                 <div class="mt-8">
                     <button type="submit"
-                        class="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700 transition hover:shadow-lg">
+                        class="w-full bg-green-600 text-white py-3 rounded-xl font-semibold">
                         Kirim Pendaftaran
                     </button>
                 </div>
 
             </form>
 
-        </div>
+            </div>
 
-    </div>
+        </div>
+    </section>
+
 </section>
+
+
+@if(session('success'))
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    Swal.fire({
+        icon: 'success',
+        title: 'Berhasil!',
+        text: '{{ session('success') }}',
+        timer: 2000,
+        showConfirmButton: false
+    }).then(() => {
+        window.location.href = "/ppdb-success";
+    });
+});
+</script>
+@endif
+
+
+@if ($errors->any())
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    Swal.fire({
+        icon: 'error',
+        title: 'Gagal!',
+        html: `
+            @foreach ($errors->all() as $error)
+                <div style="text-align:left;">• {{ $error }}</div>
+            @endforeach
+        `,
+        confirmButtonColor: '#dc2626'
+    });
+
+    document.getElementById('form-pendaftaran')
+        ?.scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+@endif
+
 
 </x-layouts.app>

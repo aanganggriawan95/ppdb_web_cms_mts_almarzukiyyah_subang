@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\berita;
+use App\Models\ekstra;
+use App\Models\fasilitas;
+use App\Models\guru_staf;
 use App\Models\hero;
 use App\Models\tentang;
 use Illuminate\Http\Request;
@@ -48,6 +51,27 @@ class HomeGetDataCms extends Controller
         $berita = berita::findOrFail($id);
 
         return view('detail-berita', compact('berita'));
+    }
+
+    public function ekskul()
+    {
+        $ekskul = ekstra::latest()->get();
+
+        return view('ekskul', compact('ekskul'));
+    }
+
+    public function GuruStaf()
+    {
+        $guru_staf = guru_staf::latest()->get();
+
+        return view('staf_guru', compact('guru_staf'));
+    }
+
+    public function Fasilitas()
+    {
+        $fasilitas = fasilitas::latest()->get();
+
+        return view('fasilitas', compact('fasilitas'));
     }
 
 }
