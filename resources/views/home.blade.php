@@ -5,7 +5,7 @@
     <div >
         <x-hero-carousel :data="$hero" />
         <x-about-section :data="$tentang" />
-        <x-department-section />
+        <x-department-section :data="$sambutan" />
         <x-news-section :data="$berita" />
         
     </div>

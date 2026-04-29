@@ -6,7 +6,7 @@
         <!-- TITLE -->
         <div class="text-center mb-14">
             <h2 class="text-3xl md:text-4xl font-bold mb-2">
-                Ekstrakurikuler
+                Fasilitas MTS Almarzukiyyah
             </h2>
             <p class="text-gray-500">
                 Berbagai fasilitas MTS Almarzukiyyah

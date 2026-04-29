@@ -1,6 +1,6 @@
 <x-layouts.admin title="CMS Tentang Section">
 
-<div class="">
+<div class="h-full overflow-auto">
 
     <div class=" rounded-xl ">
         {{-- @foreach ($tentang as $data ) --}}

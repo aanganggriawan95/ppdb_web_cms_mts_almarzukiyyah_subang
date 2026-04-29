@@ -1,6 +1,6 @@
 <x-layouts.admin title="Dashboard">
 
-<div class="px-4 sm:px-6 lg:px-8">
+<div class="px-4 h-full overflow-auto sm:px-6 lg:px-8">
 
     <div class=" rounded-xl ">
 
@@ -123,6 +123,13 @@
 
             <!-- BUTTON -->
             <div class="flex gap-3">
+                 <a
+                    href="/admin/tentang"
+                    
+                    class="px-5 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
+                >
+                    Kembali
+                </a>
                 <button
                     type="submit"
                     class="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
@@ -130,12 +137,7 @@
                     Simpan Data
                 </button>
 
-                <button
-                    type="reset"
-                    class="px-5 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
-                >
-                    Kembali
-                </button>
+               
             </div>
 
         </form>

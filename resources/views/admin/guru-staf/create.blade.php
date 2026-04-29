@@ -1,6 +1,6 @@
 <x-layouts.admin title="Create Guru & Staf">
 
-<div class="">
+<div class="h-full overflow-auto">
 
     <div class=" rounded-xl ">
 
@@ -162,6 +162,11 @@
 
             <!-- BUTTON -->
             <div class="flex gap-3">
+                  <a href="/admin/guru-staf"
+                    class="px-5 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
+                >
+                    Back
+                </a>
                 <button
                     type="submit"
                     class="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
@@ -169,12 +174,7 @@
                     SAVE
                 </button>
 
-                <button
-                    type="reset"
-                    class="px-5 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
-                >
-                    RESET
-                </button>
+              
             </div>
 
         </form>

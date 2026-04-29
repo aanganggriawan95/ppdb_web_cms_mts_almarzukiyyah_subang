@@ -7,6 +7,7 @@ use App\Models\ekstra;
 use App\Models\fasilitas;
 use App\Models\guru_staf;
 use App\Models\hero;
+use App\Models\sambutan;
 use App\Models\tentang;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -37,12 +38,14 @@ class HomeGetDataCms extends Controller
         //     ];
         // });
          $tentang = tentang::first();
+         $sambutan = sambutan::first();
          $berita = berita::latest()->get();
         
         return view('home', [
             'hero' => $hero,
             'tentang' => $tentang,
-            'berita' => $berita
+            'berita' => $berita,
+            'sambutan' => $sambutan
         ]);
     }
 

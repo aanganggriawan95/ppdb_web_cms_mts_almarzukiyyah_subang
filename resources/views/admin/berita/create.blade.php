@@ -1,6 +1,6 @@
-<x-layouts.admin title="Dashboard">
+<x-layouts.admin title="Create Berita">
 
-<div class="">
+<div class="h-full overflow-auto">
 
     <div class=" rounded-xl ">
 

@@ -1,6 +1,6 @@
 <x-layouts.admin title="Dashboard">
 
-<div>
+<div class="h-full overflow-auto">
     <div class="rounded-xl">
 
         <form action="{{ route('visi-misi.store') }}" method="POST" class="space-y-6">

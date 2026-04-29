@@ -1,6 +1,6 @@
 <x-layouts.admin title="CMS Ekstrakurikuler">
 
-<div class="p-6 space-y-6">
+<div class="p-6 h-full overflow-auto space-y-6">
 
     <!-- HEADER -->
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -24,7 +24,7 @@
             type="text" 
             name="search" 
             value="{{ request('search') }}"
-            placeholder="Cari judul hero..."
+            placeholder="Cari ekskul..."
             class="w-full md:w-1/3 px-4 py-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none"
         >
 
@@ -81,11 +81,7 @@
                         <td class="p-4">
                             <div class="flex justify-center gap-2">
 
-                                <a href="/ekskul"
-                                target="_blank"
-                                   class="px-3 py-1.5 text-xs rounded-lg bg-gray-700 text-white hover:bg-gray-800 transition">
-                                    Show
-                                </a>
+            
 
                                 <a href="{{ route('ekskul.edit', $data->id) }}"
                                    class="px-3 py-1.5 text-xs rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">

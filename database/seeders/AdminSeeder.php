@@ -20,9 +20,19 @@ class AdminSeeder extends Seeder
                 ['email' => 'admin@gmail.com'],
                 ['name' => 'Admin',
                 'password' => Hash::make('admin@123'),
+                'role' => 'admin',
                 ]
             
 
+        );
+
+        User::updateOrCreate(
+            
+                ['email' => 'topmanager@gmail.com'],
+                ['name' => 'Top Manager',
+                'password' => Hash::make('topmanager@123'),
+                'role' => 'top_manager',
+                ]
         );
     }
 }

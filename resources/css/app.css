@@ -98,3 +98,18 @@ ol {
 html {
     scroll-behavior: smooth;
 }
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: none;
+}
+
+/* IE & Edge lama */
+* {
+    -ms-overflow-style: none;
+}

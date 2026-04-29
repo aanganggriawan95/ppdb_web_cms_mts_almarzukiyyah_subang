@@ -1,6 +1,6 @@
 <x-layouts.admin title="CMS Guru & Staf">
 
-<div class="p-6 space-y-6">
+<div class="p-6 h-full overflow-auto space-y-6">
 
     <!-- HEADER -->
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -24,7 +24,7 @@
             type="text" 
             name="search" 
             value="{{ request('search') }}"
-            placeholder="Cari judul hero..."
+            placeholder="Cari guru & staf..."
             class="w-full md:w-1/3 px-4 py-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 outline-none"
         >
 

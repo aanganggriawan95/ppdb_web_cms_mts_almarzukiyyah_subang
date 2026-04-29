@@ -1,6 +1,6 @@
 <x-layouts.admin title="CMS Hero">
 
-<div class="p-6 space-y-6">
+<div class="p-6 h-full overflow-auto space-y-6">
 
     <!-- HEADER -->
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -81,10 +81,7 @@
                         <td class="p-4">
                             <div class="flex justify-center gap-2">
 
-                                <a href="{{ route('hero.show', $data->id) }}"
-                                   class="px-3 py-1.5 text-xs rounded-lg bg-gray-700 text-white hover:bg-gray-800 transition">
-                                    Show
-                                </a>
+                              
 
                                 <a href="{{ route('hero.edit', $data->id) }}"
                                    class="px-3 py-1.5 text-xs rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">

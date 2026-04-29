@@ -1,6 +1,6 @@
 <x-layouts.admin title="Dashboard">
 
-<div class="">
+<div class="h-full overflow-auto">
 
     <div class=" rounded-xl ">
 
@@ -161,19 +161,20 @@
 
             <!-- BUTTON -->
             <div class="flex gap-3">
+                 <a href="/admin/hero"
+                    type="reset"
+                    class="px-5 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
+                >
+                    Kembali
+                </a>
                 <button
                     type="submit"
                     class="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
                 >
-                    SAVE
+                    Simpan
                 </button>
 
-                <button
-                    type="reset"
-                    class="px-5 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
-                >
-                    RESET
-                </button>
+               
             </div>
 
         </form>

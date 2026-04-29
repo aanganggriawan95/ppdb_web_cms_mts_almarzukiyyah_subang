@@ -12,19 +12,19 @@ class CmsHero extends Controller
 {
     //
    public function index(Request $request) : View
-{
-    $search = $request->input('search');
+    {
+        $search = $request->input('search');
 
-    $hero = hero::query()
-        ->when($search, function ($query) use ($search) {
-            $query->where('title', 'like', '%' . $search . '%');
-        })
-        ->latest()
-        ->paginate(5)
-        ->withQueryString();
+        $hero = hero::query()
+            ->when($search, function ($query) use ($search) {
+                $query->where('title', 'like', '%' . $search . '%');
+            })
+            ->latest()
+            ->paginate(5)
+            ->withQueryString();
 
-    return view('admin.hero.index', compact('hero'));
-}
+        return view('admin.hero.index', compact('hero'));
+    }
 
     /**
      * create
@@ -49,7 +49,7 @@ class CmsHero extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
         ]);
 
         // Ulopad Image

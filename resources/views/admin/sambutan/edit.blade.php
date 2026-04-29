@@ -1,0 +1,197 @@
+<x-layouts.admin title="Edit Sambutan">
+
+<div class="h-full overflow-auto">
+
+    <div class=" rounded-xl ">
+
+       <form action="{{ route('sambutan.update', $sambutan->id) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+            @csrf
+            @method('PUT')
+
+            <!-- IMAGE -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    IMAGE
+                </label>
+                
+
+              
+               <div 
+                    x-data="{
+                        fileSelected: false,
+                        fileName: null,
+
+                        handleFile(e) {
+                            const file = e.target.files[0]
+                            this.fileSelected = !!file
+                            this.fileName = file ? file.name : null
+                        }
+                    }"
+                    class="mt-2 flex justify-center rounded-lg border border-dashed px-6 py-10 transition-all duration-300"
+                    :class="fileSelected 
+                        ? 'bg-green-50 border-green-500' 
+                        : 'border-gray-900/25'"
+                >
+                    <div class="text-center">
+
+                        <!-- ICON -->
+                        <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-12 text-gray-300">
+                    <path d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                        <!-- INPUT -->
+                        <div class="mt-4 flex text-sm text-gray-600 justify-center">
+                            <label 
+                                for="file-upload"
+                                class="cursor-pointer font-semibold text-slate-500 hover:text-indigo-500"
+                            >
+                                Upload file
+                            </label>
+
+                            <input 
+                                id="file-upload"
+                                type="file"
+                                name="image"
+                                class="sr-only"
+                                accept="image/*"
+                                @change="handleFile($event)"
+                            >
+
+                            <p class="pl-1">atau drag & drop</p>
+                        </div>
+
+                        <!-- INFO -->
+                        <p class="text-xs text-gray-500 mt-1">
+                            PNG, JPG, GIF up to 5MB
+                        </p>
+
+                        <!-- FILE NAME -->
+                        <p x-show="fileSelected"
+                        x-text="fileName"
+                        class="text-xs text-green-600 mt-2">
+                        </p>
+
+                    </div>
+                </div>
+
+                @error('image')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- TITLE -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    JUDUL SAMBUTAN
+                </label>
+
+                <input
+                    type="text"
+                    name="title"
+                    value="{{ old('title', $sambutan->title) }}"
+                    placeholder="Masukkan Judul Sambutan"
+                    class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none
+                    @error('title') border-red-500 @enderror"
+                >
+
+                @error('title')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    NAMA PEMBERI SAMBUTAN
+                </label>
+
+               <input
+                    type="text"
+                    maxlength="30"
+                    name="nama"
+                    value="{{ old('nama', $sambutan->nama) }}"
+                    placeholder="Masukkan nama "
+                    class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none
+                    @error('nama') border-red-500 @enderror"
+                >
+
+                @error('nama')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        DESCRIPTION
+                    </label>
+
+                    <textarea
+                    
+                        name="deskripsi"
+                        rows="5"
+                    
+                 
+                        class="w-full border border-gray-300 rounded-lg p-1  focus:ring-2 focus:ring-blue-500 focus:outline-none
+                        "
+                    >{{old('deskripsi', $sambutan->deskripsi)}}</textarea>
+                     @error('deskripsi')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
+
+                   
+                </div>
+
+            <!-- BUTTON -->
+            <div class="flex gap-3">
+                 <a href="/admin/sambutan"
+                
+                    class="px-5 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
+                >
+                    Back
+                </a>
+                <button
+                    type="submit"
+                    class="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                >
+                    SAVE
+                </button>
+
+               
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- CKEDITOR -->
+<script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('deskripsi');
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+@if(session('success'))
+Swal.fire({
+    icon: "success",
+    title: "Berhasil",
+    text: "{{ session('success') }}",
+    timer: 2000,
+    showConfirmButton: false
+});
+@endif
+
+@if(session('error'))
+Swal.fire({
+    icon: "error",
+    title: "Gagal",
+    text: "{{ session('error') }}",
+    timer: 2000,
+    showConfirmButton: false
+});
+@endif
+</script>
+
+</x-layouts.admin>

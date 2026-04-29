@@ -1,6 +1,6 @@
 <x-layouts.admin title="Update Hero">
 
-<div class="">
+<div class="h-full overflow-auto">
 
     <div class=" rounded-xl ">
 
