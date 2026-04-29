@@ -15,20 +15,20 @@
                     <h2 class="sr-only">Steps</h2>
 
                     <div>
-                        <ol class="grid grid-cols-1 divide-x divide-gray-100 overflow-hidden rounded-lg border border-gray-100 text-sm text-gray-600 sm:grid-cols-5">
-                        <li class="flex items-center justify-center gap-2 p-4">
+                        <ol class="grid grid-cols-1 divide-x divide-gray-100 overflow-hidden rounded-lg border border-gray-100 text-sm text-gray-600 sm:grid-cols-4">
+                        <li class="flex text-white items-center justify-center gap-2 p-4">
                             <svg class="size-7 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path>
                             </svg>
 
-                            <p class="leading-none">
-                            <strong class="block font-medium text-gray-900"> Pendaftaran </strong>
+                            <p class="leading-none ">
+                            <strong class="block text-white font-medium "> Pendaftaran </strong>
 
-                            <small class="mt-1">1 Jan s/d 30 Jun 2026</small>
+                            <small class="mt-1 text-white">{{$timeline ? $timeline->daftar : ''}}</small>
                             </p>
                         </li>
 
-                        <li class="relative flex items-center justify-center gap-2 bg-gray-50 p-4">
+                        <li class="relative flex text-green-500 items-center justify-center gap-2 bg-gray-50 p-4">
                             <span class="absolute top-1/2 -left-2 hidden size-4 -translate-y-1/2 rotate-45 border border-gray-100 sm:block ltr:border-s-0 ltr:border-b-0 ltr:bg-white rtl:border-e-0 rtl:border-t-0 rtl:bg-gray-50">
                             </span>
 
@@ -40,52 +40,35 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                             </svg>
 
-                            <p class="leading-none">
-                            <strong class="block font-medium text-gray-900"> Tes Masuk </strong>
+                            <p class="leading-none text-green-500">
+                            <strong class="block text-green-500 font-medium text-gray-900"> Tes Masuk </strong>
 
-                            <small class="mt-1"> Where we sending it? </small>
+                            <small class="mt-1 text-green-500"> {{$timeline ? $timeline->tes : ''}} </small>
                             </p>
                         </li>
 
-                        <li class="flex items-center justify-center gap-2 p-4">
+                        <li class="flex items-center justify-center gap-2 p-4 text-white">
+                            <svg class="size-7 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                            </svg>
+
+                            <p class="leading-none text-white">
+                            <strong class="text-white block font-medium text-gray-900"> Daftar Ulang </strong>
+
+                            <small class="mt-1 text-white"> {{$timeline ? $timeline->daftar_ulang : ''}} </small>
+                            </p>
+                        </li>
+
+                       
+                        <li class="flex text-white items-center justify-center gap-2 p-4">
                             <svg class="size-7 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
                             </svg>
 
                             <p class="leading-none">
-                            <strong class="block font-medium text-gray-900"> Daftar Ulang </strong>
+                            <strong class="block font-medium text-white"> MPLS </strong>
 
-                            <small class="mt-1"> Show us the money. </small>
-                            </p>
-                        </li>
-
-                        <li class="relative flex items-center justify-center gap-2 bg-gray-50 p-4">
-                            <span class="absolute top-1/2 -left-2 hidden size-4 -translate-y-1/2 rotate-45 border border-gray-100 sm:block ltr:border-s-0 ltr:border-b-0 ltr:bg-white rtl:border-e-0 rtl:border-t-0 rtl:bg-gray-50">
-                            </span>
-
-                            <span class="absolute top-1/2 -right-2 hidden size-4 -translate-y-1/2 rotate-45 border border-gray-100 sm:block ltr:border-s-0 ltr:border-b-0 ltr:bg-gray-50 rtl:border-e-0 rtl:border-t-0 rtl:bg-white">
-                            </span>
-
-                            <svg class="size-7 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-
-                            <p class="leading-none">
-                            <strong class="block font-medium text-gray-900"> Tes Masuk </strong>
-
-                            <small class="mt-1"> Where we sending it? </small>
-                            </p>
-                        </li>
-                        <li class="flex items-center justify-center gap-2 p-4">
-                            <svg class="size-7 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                            </svg>
-
-                            <p class="leading-none">
-                            <strong class="block font-medium text-gray-900"> MPLS </strong>
-
-                            <small class="mt-1"> Show us the money. </small>
+                            <small class="mt-1 text-white"> {{$timeline ? $timeline->mpls : ''}}</small>
                             </p>
                         </li>
                         </ol>
@@ -98,7 +81,7 @@
 
                 <div class="bg-white/20 backdrop-blur-md px-6 py-3 rounded-xl">
                     <p class="text-sm">
-                        Tahun Ajaran 2026/2027
+                        Tahun Ajaran {{$timeline ? $timeline->tahun : ''}}
                     </p>
                 </div>
 

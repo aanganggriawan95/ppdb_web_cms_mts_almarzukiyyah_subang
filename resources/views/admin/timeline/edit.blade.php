@@ -79,6 +79,24 @@
                     <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
                 @enderror
             </div>
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                    Tahun Penerimaan
+                </label>
+
+                <input
+                    type="text"
+                    name="tahun"
+                    value="{{old('tahun', $timeline->tahun)}}"
+                    placeholder="Contoh (30 Sep 2026)"
+                    class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none
+                    @error('tahun') border-red-500 @enderror"
+                >
+
+                @error('tahun')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                @enderror
+            </div>
 
             
            

@@ -9,6 +9,7 @@ use App\Models\guru_staf;
 use App\Models\hero;
 use App\Models\sambutan;
 use App\Models\tentang;
+use App\Models\timeline;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -76,5 +77,12 @@ class HomeGetDataCms extends Controller
 
         return view('fasilitas', compact('fasilitas'));
     }
+
+    public function Timeline()
+    {
+        $timeline = timeline::first();
+        return view('ppdb', compact('timeline'));
+    }
+
 
 }

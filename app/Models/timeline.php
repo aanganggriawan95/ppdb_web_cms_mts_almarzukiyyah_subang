@@ -14,5 +14,6 @@ class timeline extends Model
         'tes',
         'daftar_ulang',
         'mpls',
+        'tahun'
     ];
 }

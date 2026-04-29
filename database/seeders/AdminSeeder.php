@@ -31,7 +31,7 @@ class AdminSeeder extends Seeder
                 ['email' => 'topmanager@gmail.com'],
                 ['name' => 'Top Manager',
                 'password' => Hash::make('topmanager@123'),
-                'role' => 'top_manager',
+                'role' => 'top_admin',
                 ]
         );
     }

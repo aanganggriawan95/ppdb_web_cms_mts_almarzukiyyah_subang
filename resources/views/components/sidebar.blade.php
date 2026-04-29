@@ -93,6 +93,10 @@
                    class="block px-3 py-2 rounded hover:bg-gray-700">
                     Fasilitas CMS
                 </a>
+                <a href="/admin/timeline"
+                   class="block px-3 py-2 rounded hover:bg-gray-700">
+                    Time Line PPDB CMS
+                </a>
                
 
             </div>

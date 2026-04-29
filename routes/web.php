@@ -27,9 +27,7 @@ Route::get('/berita/{id}', [HomeGetDataCms::class, 'show'])->name('berita.show')
 Route::get('/ekskul', [HomeGetDataCms::class, 'ekskul']);
 Route::get('/guru-staf', [HomeGetDataCms::class, 'GuruStaf']);
 Route::get('/fasilitas', [HomeGetDataCms::class, 'Fasilitas']);
-Route::get('/ppdb-online', function () {
-    return view('ppdb');
-});
+Route::get('/ppdb-online', [HomeGetDataCms::class, 'Timeline']);
 Route::post('/ppdb-post', [postPPDB::class, 'store']);
 Route::get('/ppdb-success', function () {
     return view('success');

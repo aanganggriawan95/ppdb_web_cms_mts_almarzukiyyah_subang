@@ -45,6 +45,7 @@ class CmsTimeline extends Controller
             'tes' => 'required',
             'daftar_ulang' => 'required',
             'mpls' => 'required',
+            'tahun' => 'required'
         ]);
 
       
@@ -54,7 +55,8 @@ class CmsTimeline extends Controller
             'daftar' => $request->daftar,
             'tes' => $request->tes,
             'daftar_ulang' => $request->daftar_ulang,
-            'mpls' => $request->mpls
+            'mpls' => $request->mpls,
+            'tahun' => $request->tahun
         ]);
 
         return redirect()->route('timeline.index')->with('success', 'Timeline Berhasil Ditambahkan');
@@ -76,7 +78,8 @@ class CmsTimeline extends Controller
             'daftar' => $data->daftar,
             'tes' => $data->tes,
             'daftar_ulang' => $data->daftar_ulang,
-            'mpls' => $data->mpls
+            'mpls' => $data->mpls,
+            'tahun' => $data->tahun
         ]);
 
     }
@@ -106,6 +109,7 @@ class CmsTimeline extends Controller
             'tes' => 'required',
             'daftar_ulang' => 'required',
             'mpls' => 'required',
+            'tahun' => 'required'
             
         ]);
 
@@ -119,7 +123,8 @@ class CmsTimeline extends Controller
                 'daftar' => $request->daftar,
                 'tes' => $request->tes,
                 'daftar_ulang' => $request->daftar_ulang,
-                'mpls' => $request->mpls
+                'mpls' => $request->mpls,
+                'tahun' => $request->tahun
                 ]);
         
 

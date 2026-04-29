@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('timelines', function (Blueprint $table) {
-            $table->id();
+        //
+         Schema::create('timelines', function (Blueprint $table) {
+           $table->id();
             $table->string('daftar');
             $table->string('tes');
             $table->string('daftar_ulang');
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('timelines');
+        //
     }
 };

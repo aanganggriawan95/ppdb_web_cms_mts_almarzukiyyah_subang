@@ -1,4 +1,4 @@
-<x-layouts.admin title="CMS Visi & Misi">
+<x-layouts.admin title="CMS Timeline PPDB">
 
 <div 
     x-data="visiMisiModal()" 
@@ -29,6 +29,7 @@
                         <th class="p-4 text-left">Tes Penerimaan</th>
                         <th class="p-4 text-left">Daftar Ulang</th>
                         <th class="p-4 text-left">MPLS</th>
+                        <th class="p-4 text-left">Tahun</th>
                         <th class="p-4 text-center">Actions</th>
                     </tr>
                 </thead>
@@ -54,6 +55,11 @@
                         <td class="p-4 text-gray-500 max-w-md">
                             <div class="line-clamp-2">
                                 {!! Str::limit(strip_tags($data->mpls), 80) !!}
+                            </div>
+                        </td>
+                        <td class="p-4 text-gray-500 max-w-md">
+                            <div class="line-clamp-2">
+                                {!! Str::limit(strip_tags($data->tahun), 80) !!}
                             </div>
                         </td>
 
